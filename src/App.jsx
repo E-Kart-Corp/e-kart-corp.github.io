@@ -511,7 +511,7 @@ const Team = () => {
     },
     {
       name: "Benjamin MAILLOT",
-      role: "Développeur Mobile & Reconnaissance Visuelle",
+      role: "Reconnaissance Visuelle",
       bio: "Responsable de l'intégration de Yolo pour la reconnaissance de forme.",
       imageUrl: "https://avatars.githubusercontent.com/u/91675084?v=4",
     },
