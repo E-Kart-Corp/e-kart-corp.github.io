@@ -11,8 +11,6 @@ import {
   Users,
   ChevronDown,
   ChevronUp,
-  Twitter,
-  Instagram,
 } from "lucide-react";
 import { IconDiscord, IconInsta, IconReddit, IconTwitter } from "./icon";
 
@@ -373,8 +371,47 @@ const Partners = () => {
   );
 };
 
-// Beta Test Component
 const BetaTest = () => {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch(
+        "https://test-vercel-henna-kappa.vercel.app/api/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        setMessage(data.message);
+        setEmail("");
+      } else {
+        setIsSuccess(false);
+        setMessage("Une erreur est survenue. Veuillez réessayer.");
+      }
+    } catch (error) {
+      setIsSuccess(false);
+      setMessage("Une erreur est survenue. Veuillez réessayer.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section
       id="beta"
@@ -392,37 +429,7 @@ const BetaTest = () => {
         </div>
         <div className="max-w-lg mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
           <div className="p-8">
-            <div className="space-y-6">
-              <div>
-                <label
-                  htmlFor="firstName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Prénom
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  placeholder="Votre prénom"
-                  className="w-full px-4 py-3 mb-2 sm:mb-0 sm:mr-4 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="lastName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Nom
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  placeholder="Votre nom"
-                  className="w-full px-4 py-3 mb-2 sm:mb-0 sm:mr-4 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
-                />
-              </div>
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="email"
@@ -434,16 +441,34 @@ const BetaTest = () => {
                   type="email"
                   id="email"
                   name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Votre adresse email"
                   className="w-full px-4 py-3 mb-2 sm:mb-0 sm:mr-4 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                  required
                 />
               </div>
               <div>
-                <button className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                  Je veux tester
+                <button
+                  type="submit"
+                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Envoi en cours..." : "Je veux tester"}
                 </button>
               </div>
-            </div>
+              {message && (
+                <div
+                  className={`p-3 rounded ${
+                    isSuccess
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
+                  }`}
+                >
+                  {message}
+                </div>
+              )}
+            </form>
           </div>
         </div>
       </div>
@@ -533,6 +558,46 @@ const Team = () => {
 
 // Newsletter Component
 const Newsletter = () => {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch(
+        "https://test-vercel-henna-kappa.vercel.app/api/getmailnews",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        setMessage(data.message);
+        setEmail("");
+      } else {
+        setIsSuccess(false);
+        setMessage("Une erreur est survenue. Veuillez réessayer.");
+      }
+    } catch (error) {
+      setIsSuccess(false);
+      setMessage("Une erreur est survenue. Veuillez réessayer.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="bg-gray-50 py-12 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -545,18 +610,37 @@ const Newsletter = () => {
             nouvelles fonctionnalités
           </p>
         </div>
-        <div className="max-w-md mx-auto">
-          <div className="sm:flex">
-            <input
-              type="email"
-              className="w-full px-4 py-3 mb-2 sm:mb-0 sm:mr-4 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
-              placeholder="Votre adresse email"
-            />
-            <button className="w-full sm:w-auto px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-              S'abonner
-            </button>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="max-w-md mx-auto">
+            <div className="sm:flex">
+              <input
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                className="w-full px-4 py-3 mb-2 sm:mb-0 sm:mr-4 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                placeholder="Votre adresse email"
+              />
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full sm:w-auto px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                {isLoading ? "Envoi en cours..." : "S'abonner"}
+              </button>
+            </div>
           </div>
-        </div>
+          {message && (
+            <div
+              className={`p-3 rounded ${
+                isSuccess
+                  ? "bg-green-100 text-green-700"
+                  : "bg-red-100 text-red-700"
+              }`}
+            >
+              {message}
+            </div>
+          )}
+        </form>
       </div>
     </section>
   );
@@ -677,39 +761,10 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          {/* <div>
-            <h3 className="text-lg font-semibold mb-4">Légal</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white">
-                  Conditions d'utilisation
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white">
-                  Politique de confidentialité
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white">
-                  Mentions légales
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white">
-                  RGPD
-                </a>
-              </li>
-            </ul>
-          </div> */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="text-gray-300">ekart.eip.contact@gmail.com</li>
-              {/* <li className="text-gray-300">+33 1 23 45 67 89</li> */}
-              {/* <li className="text-gray-300">
-                123 Avenue de l'Innovation, Paris
-              </li> */}
               <li className="flex space-x-4 mt-4">
                 <a
                   href="https://www.reddit.com/r/eKart/"
