@@ -13,6 +13,8 @@ import {
   ChevronUp,
 } from "lucide-react";
 import { IconDiscord, IconInsta, IconReddit, IconTwitter } from "./icon";
+import logo from './assets/logo.png';
+import brandName from './assets/brand name.png';
 
 // Navbar Component
 const Navbar = () => {
@@ -24,45 +26,45 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <ShoppingCart className="h-8 w-8 text-blue-500" />
-              <span className="ml-2 text-xl font-bold text-blue-500">
-                e-kart
-              </span>
+              <div className="flex items-center">
+                <img src={logo} alt="Logo" className="h-12 w-12" />
+                <img src={brandName} alt="Brand Name" className="ml-2 h-8" />
+              </div>
             </div>
             <div className="hidden md:ml-6 md:flex md:space-x-8">
               <a
                 href="#home"
-                className="text-gray-900 hover:text-blue-500 px-3 py-2 text-sm font-medium"
+                className="text-gray-900 hover:text-[#4672D5] px-3 py-2 text-sm font-medium"
               >
                 Accueil
               </a>
               <a
                 href="#fonctionnement"
-                className="text-gray-900 hover:text-blue-500 px-3 py-2 text-sm font-medium"
+                className="text-gray-900 hover:text-[#4672D5] px-3 py-2 text-sm font-medium"
               >
                 Fonctionnement
               </a>
               <a
                 href="#avantages"
-                className="text-gray-900 hover:text-blue-500 px-3 py-2 text-sm font-medium"
+                className="text-gray-900 hover:text-[#4672D5] px-3 py-2 text-sm font-medium"
               >
                 Avantages
               </a>
               <a
                 href="#beta"
-                className="text-gray-900 hover:text-blue-500 px-3 py-2 text-sm font-medium"
+                className="text-gray-900 hover:text-[#4672D5] px-3 py-2 text-sm font-medium"
               >
                 Beta Test
               </a>
               <a
                 href="#equipe"
-                className="text-gray-900 hover:text-blue-500 px-3 py-2 text-sm font-medium"
+                className="text-gray-900 hover:text-[#4672D5] px-3 py-2 text-sm font-medium"
               >
                 Équipe
               </a>
               <a
                 href="#contact"
-                className="text-gray-900 hover:text-blue-500 px-3 py-2 text-sm font-medium"
+                className="text-gray-900 hover:text-[#4672D5] px-3 py-2 text-sm font-medium"
               >
                 Contact
               </a>
@@ -71,7 +73,8 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <a
               href="#beta"
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white transition-transform duration-200 hover:scale-105 hover:text-white"
+              style={{ backgroundColor: '#4672D5' }}
             >
               Tester la bêta
             </a>
@@ -148,7 +151,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="bg-gradient-to-r from-blue-500 to-blue-600 py-20 w-full"
+      className="bg-gradient-to-r from-[#4672D5] to-[#4672D5] py-20 w-full"
     >
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between">
@@ -163,13 +166,13 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#beta"
-                className="inline-flex justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 shadow-lg"
+                className="inline-flex justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-[#4672D5] bg-white hover:bg-gray-50 shadow-lg transform transition duration-300 hover:scale-105"
               >
                 Tester la bêta
               </a>
               <a
                 href="#fonctionnement"
-                className="inline-flex justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white "
+                className="inline-flex justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white transition duration-300 hover:bg-white hover:text-[#4672D5]"
               >
                 Comment ça marche ?
               </a>
@@ -181,7 +184,7 @@ const HeroSection = () => {
                 <div className="w-16 h-1 bg-gray-300 rounded-full"></div>
               </div>
               <div className="p-4 pt-10 flex flex-col items-center justify-center h-full">
-                <ShoppingCart className="h-16 w-16 text-blue-500 mb-4" />
+                <img src={logo} alt="Logo" className="h-13 w-13" />
                 <p className="text-center text-gray-800">
                   App e-kart en action
                 </p>
@@ -212,8 +215,8 @@ const HowItWorks = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-            <div className="inline-flex items-center justify-center p-3 bg-blue-100 rounded-full mb-6">
-              <Search className="h-8 w-8 text-blue-500" />
+            <div className="inline-flex items-center justify-center p-3 bg-white rounded-full mb-6 shadow-md">
+              <Search className="h-8 w-8 text-[#4672D5]" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
               Scanner
@@ -225,8 +228,8 @@ const HowItWorks = () => {
             </p>
           </div>
           <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-            <div className="inline-flex items-center justify-center p-3 bg-blue-100 rounded-full mb-6">
-              <ShoppingCart className="h-8 w-8 text-blue-500" />
+            <div className="inline-flex items-center justify-center p-3 bg-white rounded-full mb-6 shadow-md">
+              <ShoppingCart className="h-8 w-8 text-[#4672D5]" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
               Panier automatique
@@ -237,8 +240,8 @@ const HowItWorks = () => {
             </p>
           </div>
           <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-            <div className="inline-flex items-center justify-center p-3 bg-blue-100 rounded-full mb-6">
-              <CreditCard className="h-8 w-8 text-blue-500" />
+            <div className="inline-flex items-center justify-center p-3 bg-white rounded-full mb-6 shadow-md">
+              <CreditCard className="h-8 w-8 text-[#4672D5]" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
               Paiement sans friction
@@ -269,8 +272,8 @@ const Benefits = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col items-center text-center">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 mb-4">
-              <Clock className="h-6 w-6 text-blue-500" />
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 mb-4">
+              <Clock className="h-6 w-6 text-[#4672D5]" />
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               Gain de temps
@@ -280,8 +283,8 @@ const Benefits = () => {
             </p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 mb-4">
-              <Sparkles className="h-6 w-6 text-blue-500" />
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 mb-4">
+              <Sparkles className="h-6 w-6 text-[#4672D5]" />
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               Technologie innovante
@@ -291,8 +294,8 @@ const Benefits = () => {
             </p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 mb-4">
-              <ShieldCheck className="h-6 w-6 text-blue-500" />
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 mb-4">
+              <ShieldCheck className="h-6 w-6 text-[#4672D5]" />
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               Sécurité maximale
@@ -302,8 +305,8 @@ const Benefits = () => {
             </p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 mb-4">
-              <Users className="h-6 w-6 text-blue-500" />
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 mb-4">
+              <Users className="h-6 w-6 text-[#4672D5]" />
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               Expérience fluide
@@ -415,7 +418,7 @@ const BetaTest = () => {
   return (
     <section
       id="beta"
-      className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 w-full"
+      className="py-20 bg-gradient-to-r from-[#4672D5] to-[#4672D5] w-full"
     >
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
@@ -444,14 +447,14 @@ const BetaTest = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Votre adresse email"
-                  className="w-full px-4 py-3 mb-2 sm:mb-0 sm:mr-4 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                  className="w-full px-4 py-3 mb-4 sm:mb-0 sm:mr-4 border-gray-800 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
                   required
                 />
               </div>
               <div>
                 <button
                   type="submit"
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#4672D5] hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                   disabled={isLoading}
                 >
                   {isLoading ? "Envoi en cours..." : "Je veux tester"}
@@ -545,7 +548,7 @@ const Team = () => {
                 <h3 className="text-lg font-medium text-gray-900">
                   {member.name}
                 </h3>
-                <p className="text-blue-500 mb-2">{member.role}</p>
+                <p className="text-[#4672D5] mb-2">{member.role}</p>
                 <p className="text-gray-600 text-sm">{member.bio}</p>
               </div>
             </div>
@@ -615,17 +618,18 @@ const Newsletter = () => {
             <div className="sm:flex">
               <input
                 type="email"
+                required
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                className="w-full px-4 py-3 mb-2 sm:mb-0 sm:mr-4 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                className="w-full px-4 py-3 mb-2 sm:mb-0 sm:mr-4 border-gray-300 rounded-md shadow-sm focus:ring-[#4672D5] focus:border-[#4672D5] bg-white text-gray-900"
                 placeholder="Votre adresse email"
               />
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full sm:w-auto px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="w-full sm:w-auto px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#4672D5] hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4672D5]"
               >
-                {isLoading ? "Envoi en cours..." : "S'abonner"}
+                {isLoading ? "Envoi..." : "S'abonner"}
               </button>
             </div>
           </div>
@@ -699,9 +703,9 @@ const FAQ = () => {
                   {faq.question}
                 </span>
                 {openIndex === index ? (
-                  <ChevronUp className="h-5 w-5 text-blue-500" />
+                  <ChevronUp className="h-5 w-5 text-[#4672D5]" />
                 ) : (
-                  <ChevronDown className="h-5 w-5 text-blue-500" />
+                  <ChevronDown className="h-5 w-5 text-[#4672D5]" />
                 )}
               </button>
               {openIndex === index && (
@@ -720,13 +724,13 @@ const FAQ = () => {
 // Footer Component
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-gray-900 text-white py-12 w-full">
+    <footer id="contact" className="bg-gray-700 text-white py-12 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center">
-              <ShoppingCart className="h-6 w-6 text-blue-400" />
-              <span className="ml-2 text-xl font-bold text-white">e-kart</span>
+            <img src={logo} alt="Logo" className="h-12 w-12" />
+            <img src={brandName} alt="Brand Name" className="ml-2 h-8" />
             </div>
             <p className="mt-4 text-gray-300">
               Transformez votre expérience de shopping avec notre technologie de
@@ -764,7 +768,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-gray-300">ekart.eip.contact@gmail.com</li>
+              <li>
+                <a href="mailto:ekart.eip.contact@gmail.com" className="text-gray-300 hover:underline hover:text-white">
+                  ekart.eip.contact@gmail.com
+                </a>
+              </li>
               <li className="flex space-x-4 mt-4">
                 <a
                   href="https://www.reddit.com/r/eKart/"
