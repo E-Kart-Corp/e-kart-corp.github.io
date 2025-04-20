@@ -1,0 +1,63 @@
+name: New Ticket
+description: Create a detailed task for the project
+labels: []
+assignees: []
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Clearly describe what needs to be done. Include context if needed.
+      placeholder: Describe clearly what needs to be done...
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal / Expected Outcome
+      description: What should be achieved when this issue is resolved?
+      placeholder: Expected result...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps / Task List
+      description: List the steps required to complete the task, or describe how to reproduce the issue.
+      placeholder: |
+        - [ ] Set up the environment
+        - [ ] Implement the feature
+        - [ ] Test and review
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Related Files / References
+      description: Link to any relevant files, API endpoints, or documentation
+      placeholder: Paste links or references here...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any extra notes for the assignee
+      placeholder: Anything else worth mentioning?
+    validations:
+      required: false
