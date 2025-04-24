@@ -13,8 +13,8 @@ import {
   ChevronUp,
 } from "lucide-react";
 import { IconDiscord, IconInsta, IconReddit, IconTwitter } from "./icon";
-import logo from './assets/logo.png';
-import brandName from './assets/brand name.png';
+import logo from "./assets/logo.png";
+import brandName from "./assets/brand name.png";
 
 // Navbar Component
 const Navbar = () => {
@@ -74,7 +74,7 @@ const Navbar = () => {
             <a
               href="#beta"
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white transition-transform duration-200 hover:scale-105 hover:text-white"
-              style={{ backgroundColor: '#4672D5' }}
+              style={{ backgroundColor: "#4672D5" }}
             >
               Tester la bêta
             </a>
@@ -490,8 +490,8 @@ const Team = () => {
     },
     {
       name: "Florian ETHEVE",
-      role: "Ingénieur IA & Qualité",
-      bio: "Responsable des algorithmes de reconnaissance IA, gestion des VM et des tests unitaires. Supervise la fiabilité du système de reconnaissance.",
+      role: "Responsable IA & Algorithmes",
+      bio: "Travaille sur l’intelligence artificielle, le traitement d’images et la configuration de la machine virtuelle (VM) pour les déploiements.",
       imageUrl: "https://avatars.githubusercontent.com/u/91674918?v=4",
     },
     {
@@ -502,14 +502,14 @@ const Team = () => {
     },
     {
       name: "Ethan GUILLOUX",
-      role: "UX Designer & Frontend Commerce",
+      role: "Responsable Communication & UX Designer & Frontend",
       bio: "Spécialisé dans l’interface utilisateur du site commerçant. Participe à la communication globale et à l’identité visuelle d'Ekart.",
       imageUrl: "https://avatars.githubusercontent.com/u/91675639?v=4",
     },
     {
       name: "Noémie MAILLOT",
-      role: "Assistante IA & Test",
-      bio: "Participe à l’implémentation et aux tests des modules IA, sous la supervision de Florian. Contribue à l’enrichissement de la base de données.",
+      role: "Développeuse IA & Algorithmes",
+      bio: "Travaille sur les algorithmes de reconnaissance, l'extraction d'attributs visuels pour améliorer la précision du modèle et les tests unitaires",
       imageUrl: "https://avatars.githubusercontent.com/u/91674938?v=4",
     },
     {
@@ -729,8 +729,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center">
-            <img src={logo} alt="Logo" className="h-12 w-12" />
-            <img src={brandName} alt="Brand Name" className="ml-2 h-8" />
+              <img src={logo} alt="Logo" className="h-12 w-12" />
+              <img src={brandName} alt="Brand Name" className="ml-2 h-8" />
             </div>
             <p className="mt-4 text-gray-300">
               Transformez votre expérience de shopping avec notre technologie de
@@ -769,7 +769,10 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:ekart.eip.contact@gmail.com" className="text-gray-300 hover:underline hover:text-white">
+                <a
+                  href="mailto:ekart.eip.contact@gmail.com"
+                  className="text-gray-300 hover:underline hover:text-white"
+                >
                   ekart.eip.contact@gmail.com
                 </a>
               </li>
