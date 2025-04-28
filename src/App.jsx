@@ -491,8 +491,8 @@ const Team = () => {
     },
     {
       name: "Florian ETHEVE",
-      role: "Ingénieur IA & Qualité",
-      bio: "Responsable des algorithmes de reconnaissance IA, gestion des VM et des tests unitaires. Supervise la fiabilité du système de reconnaissance.",
+      role: "Responsable IA & Algorithmes",
+      bio: "Travaille sur l’intelligence artificielle, le traitement d’images et la configuration de la machine virtuelle (VM) pour les déploiements.",
       imageUrl: "https://avatars.githubusercontent.com/u/91674918?v=4",
     },
     {
@@ -503,19 +503,19 @@ const Team = () => {
     },
     {
       name: "Ethan GUILLOUX",
-      role: "UX Designer & Frontend Commerce",
+      role: "Responsable Communication & UX Designer & Frontend",
       bio: "Spécialisé dans l’interface utilisateur du site commerçant. Participe à la communication globale et à l’identité visuelle d'Ekart.",
       imageUrl: "https://avatars.githubusercontent.com/u/91675639?v=4",
     },
     {
       name: "Noémie MAILLOT",
-      role: "Assistante IA & Test",
-      bio: "Participe à l’implémentation et aux tests des modules IA, sous la supervision de Florian. Contribue à l’enrichissement de la base de données.",
+      role: "Développeuse IA & Algorithmes",
+      bio: "Travaille sur les algorithmes de reconnaissance, l'extraction d'attributs visuels pour améliorer la précision du modèle et les tests unitaires",
       imageUrl: "https://avatars.githubusercontent.com/u/91674938?v=4",
     },
     {
       name: "Benjamin MAILLOT",
-      role: "Reconnaissance Visuelle",
+      role: "Développeur IA",
       bio: "Responsable de l'intégration de Yolo pour la reconnaissance de forme.",
       imageUrl: "https://avatars.githubusercontent.com/u/91675084?v=4",
     },
