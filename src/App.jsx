@@ -82,7 +82,7 @@ const Navbar = () => {
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 border-none"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -99,43 +99,44 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a
               href="#home"
-              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-[#007A5E]"
             >
               Accueil
             </a>
             <a
               href="#fonctionnement"
-              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-[#007A5E]"
             >
               Fonctionnement
             </a>
             <a
               href="#avantages"
-              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-[#007A5E]"
             >
               Avantages
             </a>
             <a
               href="#beta"
-              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-[#007A5E]"
             >
               Beta Test
             </a>
             <a
               href="#equipe"
-              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-[#007A5E]"
             >
               Équipe
             </a>
             <a
               href="#contact"
-              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-[#007A5E]"
             >
               Contact
             </a>
             <a
               href="#beta"
-              className="block px-3 py-2 text-base font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-md"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white transition-transform duration-200 hover:scale-105 hover:text-white"
+              style={{ backgroundColor: '#007A5E' }}
             >
               Tester la bêta
             </a>
