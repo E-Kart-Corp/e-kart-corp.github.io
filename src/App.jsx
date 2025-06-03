@@ -388,7 +388,7 @@ const BetaTest = () => {
 
     try {
       const response = await fetch(
-        "https://141.94.105.29:3001/message/send",
+        "https://ekart-newsletter.duckdns.org/message/send",
         {
           method: "POST",
           headers: {
@@ -575,7 +575,7 @@ const Newsletter = () => {
 
     try {
       const response = await fetch(
-        "https://141.94.105.29:3001/message/getMailNews",
+        "https://ekart-newsletter.duckdns.org/message/getMailNews",
         {
           method: "POST",
           headers: {
