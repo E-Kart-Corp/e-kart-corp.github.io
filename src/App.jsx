@@ -388,7 +388,7 @@ const BetaTest = () => {
 
     try {
       const response = await fetch(
-        "https://test-vercel-henna-kappa.vercel.app/api/send",
+        "http://141.94.105.29:3001/message/send",
         {
           method: "POST",
           headers: {
@@ -575,7 +575,7 @@ const Newsletter = () => {
 
     try {
       const response = await fetch(
-        "https://test-vercel-henna-kappa.vercel.app/api/getmailnews",
+        "http://141.94.105.29:3001/message/getMailNews",
         {
           method: "POST",
           headers: {
